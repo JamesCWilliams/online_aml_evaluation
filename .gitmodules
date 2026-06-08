@@ -1,0 +1,3 @@
+[submodule "services/amlsim/vendor"]
+	path = services/amlsim/vendor
+	url = https://github.com/JamesCWilliams/AMLSim.git
