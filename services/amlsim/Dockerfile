@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # set up java
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV MAVEN_OPTS="-Dmaven.repo.local=/tmp/.m2/repository"
 
 WORKDIR /amlsim
 
@@ -49,5 +50,7 @@ RUN mvn clean package -DskipTests -q
 
 # declare volumes
 VOLUME ["/amlsim/paramFiles", "/amlsim/outputs"]
+
+RUN chmod -R a+rw /tmp/.m2 && chmod -R a+rw /amlsim
 
 ENTRYPOINT ["/amlsim/entrypoint.sh"]

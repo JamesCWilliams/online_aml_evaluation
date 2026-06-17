@@ -1,0 +1,12 @@
+jupyter
+numpy
+pandas
+matplotlib
+seaborn
+networkx
+graphviz
+torch
+torch-geometric
+scikit-learn
+tqdm
+mlflow
